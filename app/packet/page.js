@@ -207,10 +207,9 @@ export default function PacketPage() {
           {/* Document Header */}
           <div className="p-10 md:p-12 pb-6 border-b border-slate-200">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-4">
-              <div className="flex items-center gap-0 group relative z-0">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="https://txlbsxwuaumjsewizzzz.supabase.co/storage/v1/object/public/logo/logo.png" alt="RealDoor Logo" className="w-16 h-16 sm:w-24 sm:h-24 object-contain -mr-2 sm:-mr-4 grayscale opacity-80" />
-                <span className="font-heading text-xl sm:text-2xl font-extrabold text-[#1A1A1A] relative z-20">RealDoor</span>
+              <div className="flex items-center gap-0">
+                <img src="https://txlbsxwuaumjsewizzzz.supabase.co/storage/v1/object/public/logo/logo.png" alt="RealDoor Logo" className="w-16 h-16 sm:w-24 sm:h-24 object-contain -mr-2 sm:-mr-4 -ml-4 sm:-ml-8 grayscale opacity-80" />
+                <span className="font-heading font-extrabold text-xl sm:text-2xl text-slate-900 tracking-tight">RealDoor</span>
               </div>
               <h2 className="font-heading text-lg sm:text-xl font-bold text-[#1A1A1A] uppercase tracking-wider text-left sm:text-right">Application Readiness Packet</h2>
             </div>

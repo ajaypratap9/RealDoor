@@ -74,10 +74,10 @@ export default function DashboardHeader() {
             
             {/* Logo and Desktop Nav */}
             <div className="flex items-center gap-8">
-              <Link href="/dashboard" className="flex items-center gap-0 group relative z-0">
+              <Link href="/" className="font-heading text-xl md:text-2xl font-extrabold text-slate-900 flex items-center gap-0 group relative z-0">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="https://txlbsxwuaumjsewizzzz.supabase.co/storage/v1/object/public/logo/logo.png" alt="RealDoor" className="w-24 h-24 object-contain -my-6 -mr-4 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all relative z-10" />
-                <span className="font-heading text-xl font-extrabold text-slate-900 relative z-20">RealDoor</span>
+                <img src="https://txlbsxwuaumjsewizzzz.supabase.co/storage/v1/object/public/logo/logo.png" alt="RealDoor" className="w-24 h-24 object-contain -my-6 -mr-4 -ml-6 md:-ml-8 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all relative z-10" />
+                <span className="relative z-20">RealDoor</span>
               </Link>
               
               <div className="hidden md:flex space-x-1">
