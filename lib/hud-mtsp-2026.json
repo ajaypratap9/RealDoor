@@ -1,0 +1,29 @@
+{
+  "metro": "Charlotte-Concord-Gastonia, NC-SC HUD Metro FMR Area",
+  "program": "LIHTC",
+  "year": 2026,
+  "effective_date": "2026-04-01",
+  "income_limits": {
+    "50_percent_ami": {
+      "1": 34800,
+      "2": 39750,
+      "3": 44700,
+      "4": 49650,
+      "5": 53650,
+      "6": 57600,
+      "7": 61600,
+      "8": 65550
+    },
+    "60_percent_ami": {
+      "1": 41760,
+      "2": 47700,
+      "3": 53640,
+      "4": 59580,
+      "5": 64380,
+      "6": 69120,
+      "7": 73920,
+      "8": 78660
+    }
+  },
+  "program_rules_summary": "To qualify for a LIHTC unit at the 60% AMI level, the total annual household income must be strictly less than or equal to the 60% limit for the corresponding household size. Gross monthly income is annualized by multiplying by 12. If paid bi-weekly, multiply by 26."
+}
