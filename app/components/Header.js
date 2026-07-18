@@ -8,11 +8,11 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
-      <header className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center z-50 relative">
+    <div className="relative w-full z-50">
+      <header className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center relative">
         <Link href="/" className="font-heading text-2xl font-extrabold text-slate-900 flex items-center gap-0 group relative z-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="https://txlbsxwuaumjsewizzzz.supabase.co/storage/v1/object/public/logo/logo.png" alt="RealDoor Logo" className="w-24 h-24 object-contain -my-6 -mr-4 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all relative z-10" />
+          <img src="https://txlbsxwuaumjsewizzzz.supabase.co/storage/v1/object/public/logo/logo.png" alt="RealDoor Logo" className="w-24 h-24 object-contain -my-6 -mr-4 -ml-6 md:-ml-8 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all relative z-10" />
           <span className="relative z-20">RealDoor</span>
         </Link>
         
@@ -52,6 +52,6 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 }
