@@ -31,7 +31,7 @@ export default function LandingPage() {
       <main className="flex-1 w-full relative z-10">
         
         {/* ================= HERO SECTION ================= */}
-        <section className="relative pt-8 pb-16 lg:pt-16 lg:pb-32 overflow-hidden">
+        <section className="relative pt-2 pb-16 lg:pt-6 lg:pb-32 overflow-hidden">
           {/* Ambient Background Glows */}
           <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-accent-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
           <div className="absolute bottom-[-20%] right-[-10%] w-[40%] h-[40%] bg-blue-500/10 blur-[120px] rounded-full pointer-events-none"></div>
@@ -78,61 +78,130 @@ export default function LandingPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="w-full lg:w-1/2 relative z-10 mt-10 lg:mt-0"
               >
-                <div className="relative w-full max-w-lg mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-accent-primary/20 to-blue-500/20 rounded-full blur-3xl opacity-50 animate-pulse"></div>
+                <div className="relative w-full max-w-lg mx-auto aspect-square flex items-center justify-center">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-accent-primary/20 to-blue-500/20 rounded-full blur-3xl opacity-60"></div>
                   
-                  <div className="relative bg-white/60 backdrop-blur-2xl border border-white/80 p-8 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] z-20 overflow-hidden transform transition-transform hover:scale-[1.02] duration-500">
-                    <div className="flex justify-between items-center mb-8 border-b border-slate-200/50 pb-4">
-                      <div>
-                        <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Household Status</p>
-                        <h3 className="text-2xl font-bold font-heading text-slate-900">Eligible for 60% AMI</h3>
-                      </div>
-                      <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600">
-                        <CheckCircle2 size={24} />
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-4">
-                      <div className="flex items-center justify-between bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600"><Briefcase size={20}/></div>
-                          <div>
-                            <p className="text-sm font-bold text-slate-900">Pay Stubs (Last 4)</p>
-                            <p className="text-xs font-medium text-emerald-600">Verified & Extracted</p>
-                          </div>
-                        </div>
-                        <CheckCircle2 size={20} className="text-emerald-500" />
-                      </div>
-                      <div className="flex items-center justify-between bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center text-purple-600"><Calculator size={20}/></div>
-                          <div>
-                            <p className="text-sm font-bold text-slate-900">Income Calculation</p>
-                            <p className="text-xs font-medium text-slate-500">Annualized: $42,500</p>
-                          </div>
-                        </div>
-                        <CheckCircle2 size={20} className="text-emerald-500" />
-                      </div>
-                    </div>
+                  <svg viewBox="0 0 500 500" className="w-full h-full relative z-10" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stopColor="#ffffff" stopOpacity="0.8" />
+                        <stop offset="100%" stopColor="#f8fafc" stopOpacity="0.9" />
+                      </linearGradient>
+                      <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#10b981" stopOpacity="0.4" />
+                        <stop offset="100%" stopColor="#10b981" stopOpacity="0" />
+                      </linearGradient>
+                      <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stopColor="#0f172a" />
+                        <stop offset="100%" stopColor="#334155" />
+                      </linearGradient>
+                      <filter id="glass" x="-20%" y="-20%" width="140%" height="140%">
+                        <feDropShadow dx="0" dy="15" stdDeviation="20" floodColor="#000000" floodOpacity="0.1" />
+                      </filter>
+                      <filter id="glow">
+                        <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                        <feMerge>
+                          <feMergeNode in="coloredBlur" />
+                          <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                      </filter>
+                    </defs>
 
-                    <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white/80 to-transparent pointer-events-none"></div>
-                  </div>
+                    <motion.g 
+                      initial={{ opacity: 0, y: 40 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, ease: "easeOut" }}
+                      filter="url(#glass)"
+                    >
+                      <rect x="40" y="60" width="420" height="340" rx="16" fill="url(#bgGrad)" stroke="#e2e8f0" strokeWidth="2" />
+                      
+                      <circle cx="60" cy="80" r="4" fill="#ef4444" />
+                      <circle cx="75" cy="80" r="4" fill="#eab308" />
+                      <circle cx="90" cy="80" r="4" fill="#22c55e" />
+                      <line x1="40" y1="100" x2="460" y2="100" stroke="#e2e8f0" strokeWidth="1" />
+                      
+                      <text x="60" y="130" fontFamily="sans-serif" fontSize="14" fontWeight="bold" fill="#0f172a">Compliance Overview</text>
+                      <text x="60" y="150" fontFamily="sans-serif" fontSize="10" fill="#64748b">Real-time LIHTC Eligibility Metrics</text>
 
-                  <motion.div 
-                    animate={{ y: [0, -15, 0] }}
-                    transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                    className="absolute -right-8 top-12 bg-slate-900 p-5 rounded-2xl border border-slate-700 shadow-2xl z-30 hidden md:block"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-accent-primary/20 flex items-center justify-center text-accent-primary">
-                        <ShieldAlert size={16} />
-                      </div>
-                      <div>
-                        <p className="text-xs font-bold text-slate-300">Data Privacy</p>
-                        <p className="text-xs text-slate-400">Zero Retention.</p>
-                      </div>
-                    </div>
-                  </motion.div>
+                      <rect x="60" y="180" width="180" height="120" rx="8" fill="#ffffff" stroke="#f1f5f9" strokeWidth="2" />
+                      <text x="75" y="205" fontFamily="sans-serif" fontSize="11" fontWeight="bold" fill="#334155">Income vs Limit</text>
+                      
+                      <rect x="75" y="220" width="150" height="12" rx="6" fill="#e2e8f0" />
+                      <rect x="75" y="220" width="150" height="12" rx="6" fill="#94a3b8" opacity="0.3" />
+                      
+                      <motion.rect 
+                        x="75" y="245" height="12" rx="6" fill="url(#accentGrad)"
+                        initial={{ width: 0 }}
+                        animate={{ width: 110 }}
+                        transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
+                      />
+                      <motion.text 
+                        x="75" y="275" fontFamily="sans-serif" fontSize="10" fill="#10b981" fontWeight="bold"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 1.5 }}
+                      >Below 60% AMI Threshold</motion.text>
+
+                      <rect x="260" y="180" width="140" height="120" rx="8" fill="#ffffff" stroke="#f1f5f9" strokeWidth="2" />
+                      <text x="330" y="205" fontFamily="sans-serif" fontSize="11" fontWeight="bold" fill="#334155" textAnchor="middle">Data Confidence</text>
+                      
+                      <circle cx="330" cy="250" r="30" fill="none" stroke="#e2e8f0" strokeWidth="6" />
+                      <motion.circle 
+                        cx="330" cy="250" r="30" fill="none" stroke="#10b981" strokeWidth="6" strokeLinecap="round"
+                        strokeDasharray="188.5"
+                        initial={{ strokeDashoffset: 188.5 }}
+                        animate={{ strokeDashoffset: 18.85 }}
+                        transition={{ duration: 1.5, delay: 0.8, ease: "easeOut" }}
+                        transform="rotate(-90 330 250)"
+                      />
+                      <motion.text 
+                        x="330" y="254" fontFamily="sans-serif" fontSize="14" fontWeight="bold" fill="#0f172a" textAnchor="middle"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 1.5 }}
+                      >99%</motion.text>
+
+                      <rect x="60" y="320" width="340" height="60" rx="8" fill="#ffffff" stroke="#f1f5f9" strokeWidth="2" />
+                      <motion.path 
+                        d="M 60 380 L 60 360 C 100 360, 150 330, 200 350 C 250 370, 300 320, 350 340 C 380 350, 400 330, 400 330 L 400 380 Z" 
+                        fill="url(#chartGrad)"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 1 }}
+                        style={{ clipPath: "inset(0 0 0 0 round 0 0 8px 8px)" }}
+                      />
+                      <motion.path 
+                        d="M 60 360 C 100 360, 150 330, 200 350 C 250 370, 300 320, 350 340 C 380 350, 400 330, 400 330" 
+                        fill="none" stroke="#10b981" strokeWidth="2"
+                        initial={{ pathLength: 0 }}
+                        animate={{ pathLength: 1 }}
+                        transition={{ duration: 1.5, delay: 1, ease: "easeInOut" }}
+                      />
+                    </motion.g>
+
+                    <motion.g 
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0, y: [0, -5, 0] }}
+                      transition={{ opacity: { delay: 1.8 }, x: { delay: 1.8 }, y: { repeat: Infinity, duration: 4, ease: "easeInOut" } }}
+                      filter="url(#glass)"
+                    >
+                      <rect x="20" y="30" width="130" height="40" rx="20" fill="#0f172a" />
+                      <circle cx="40" cy="50" r="8" fill="#10b981" filter="url(#glow)" />
+                      <text x="55" y="54" fontFamily="sans-serif" fontSize="10" fontWeight="bold" fill="#ffffff">Verified Stub</text>
+                    </motion.g>
+
+                    <motion.g 
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0, y: [0, 5, 0] }}
+                      transition={{ opacity: { delay: 2.1 }, x: { delay: 2.1 }, y: { repeat: Infinity, duration: 3.5, ease: "easeInOut" } }}
+                      filter="url(#glass)"
+                    >
+                      <rect x="340" y="390" width="150" height="40" rx="8" fill="#ffffff" stroke="#e2e8f0" strokeWidth="1" />
+                      <text x="355" y="414" fontFamily="sans-serif" fontSize="10" fontWeight="bold" fill="#0f172a">Annual: $42,500</text>
+                      <circle cx="470" cy="410" r="12" fill="#dbeafe" />
+                      <path d="M 466 410 L 469 413 L 474 407" fill="none" stroke="#3b82f6" strokeWidth="2" />
+                    </motion.g>
+                  </svg>
                 </div>
               </motion.div>
 
