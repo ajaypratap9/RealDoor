@@ -13,7 +13,7 @@
 
 *We read the paperwork. You keep the control.*
 
-Built by **Team Unfoldd** — Hack-Nation × RealPage Challenge, 6th Global AI Hackathon
+Built by **Team Unfoldd** —> Hack-Nation × RealPage Challenge, 6th Global AI Hackathon
 
 &nbsp;
 
